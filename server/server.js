@@ -8,10 +8,11 @@ var csv = require('csv')
 const app = express();
 const path = require("path");
 var data = require("./model/chinesechars.json");
+var cors = require('cors');
 
 var model = null;
 
-app.use(express.static(__dirname + '/model'));
+app.use(cors());
 
 
 app.get('/GetCharData', (req,res) => { 
@@ -79,4 +80,4 @@ charData = loadDatabase();
 
 
 const port =  process.env.port || 5000;
-app.listen(port, () => console.log('listening on port'));
+app.listen(port, () => console.log('listening on port ' + port));
