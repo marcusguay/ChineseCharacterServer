@@ -73,4 +73,4 @@ charData = loadDatabase();
 
 
 const port =  process.env.port || 5000;
-app.listen(port, () => console.log('listening on port ' + port));
+app.listen(port, () => console.log('listening on port ' + port + " " + __dirname + '/model'));
