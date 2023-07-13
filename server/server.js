@@ -13,6 +13,7 @@ var cors = require('cors');
 var model = null;
 
 app.use(cors());
+app.use(express.static(__dirname + '/model'));
 
 
 app.get('/GetCharData', (req,res) => { 
@@ -67,14 +68,6 @@ fs.readFile('hanziDB.csv','utf8', (error, data) => {
 return dataMap;
 }
 
-  function loadModel(){
- model = fs.readFileSync("./model/model.json")
-
-  }
-
-
-
-model = loadModel();
 charData = loadDatabase();
 
 
